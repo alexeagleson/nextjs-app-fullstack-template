@@ -1,9 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import AppShell from '../components/shells/AppShell';
-import SearchResult from '../components/widgets/search-result/SearchResult';
-import Search from '../components/widgets/search/Search';
-import { mockSearchResult } from '../lib/search/mocks';
+import Search from '../components/widgets/search-feature/SearchFeature';
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +14,6 @@ const Home: NextPage = () => {
 
       <AppShell>
         <Search />
-        <SearchResult {...mockSearchResult} className="mt-48" />
       </AppShell>
     </>
   );
