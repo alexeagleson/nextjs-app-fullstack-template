@@ -11,9 +11,15 @@ export default function handler(
   req: NextApiRequestSearch,
   res: NextApiResponse<Array<ISearchResultData>>
 ) {
-  const { body } = req;
-  if (body.searchTerm && body.searchTerm.length > 0) {
-    res.status(200).json(mockSearchResults);
+  const {
+    body: { searchTerm },
+  } = req;
+
+  if (searchTerm && searchTerm.length > 0) {
+    const filteredResults = mockSearchResults.filter((result) => {
+      return result.text.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    res.status(200).json(filteredResults);
   } else {
     res.status(400).json([]);
   }
