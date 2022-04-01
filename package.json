@@ -22,12 +22,15 @@
     "playwright:test": "playwright test",
     "playwright:codegen": "playwright codegen http://localhost:3000",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "pull-translations": "i18nexus pull"
   },
   "dependencies": {
     "next": "12.1.4",
+    "next-i18next": "^10.5.0",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "react-i18next": "^11.16.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -54,6 +57,7 @@
     "eslint-config-next": "12.1.4",
     "eslint-plugin-storybook": "^0.5.7",
     "husky": "^7.0.4",
+    "i18nexus-cli": "^2.1.0",
     "jest": "^27.5.1",
     "postcss": "^8.4.12",
     "prettier": "^2.6.1",

@@ -51,6 +51,13 @@ module.exports = {
     //   '@': [path.resolve(__dirname, '../src/'), path.resolve(__dirname, '../')],
     // };
 
+    // Required alias for Storybook i18n
+    // https://github.com/isaachinman/next-i18next/issues/935#issuecomment-802001105
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'next-i18next': 'react-i18next',
+    };
+
     /**
      * Fixes font import with /
      * @see https://github.com/storybookjs/storybook/issues/12844#issuecomment-867544160

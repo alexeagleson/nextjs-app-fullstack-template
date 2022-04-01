@@ -14,7 +14,7 @@ test('submits the search', async ({ page }) => {
     page.waitForResponse((resp) => {
       return resp.url().includes('/api/search') && resp.status() === 200;
     }),
-    page.locator('text=Google Search').click(),
+    page.locator('button[type="submit"]').click(),
   ]);
 
   await page.screenshot({ path: 'snapshot.png' });

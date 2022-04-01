@@ -2,10 +2,12 @@ import SearchInput from '../../inputs/SearchInput';
 import Image from 'next/image';
 import SearchResultGroup from '../search-result-group/SearchResultGroup';
 import { useSearch } from '../../../lib/search/useSearch';
+import { useTranslation } from 'next-i18next';
 
 interface ISearchFeature {}
 
 const SearchFeature: React.FC<ISearchFeature> = (_props) => {
+  const { t } = useTranslation();
   const { searchResults, searchTerm, setSearchTerm, submitSearch } =
     useSearch();
 
@@ -30,7 +32,7 @@ const SearchFeature: React.FC<ISearchFeature> = (_props) => {
             type="submit"
             className="border-1 p-2 px-6 bg-slate-100 rounded-md"
           >
-            Google Search
+            {t('google_search', { ns: 'common' })}
           </button>
           <button className="border-1 p-2 px-6 bg-slate-100 rounded-md">
             {`I'm feeling lucky`}
