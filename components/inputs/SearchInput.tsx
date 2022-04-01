@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-interface ISearchBar {}
+interface ISearchInput {}
 
-const SearchBar: React.FC<ISearchBar> = (_props) => {
+const SearchInput: React.FC<ISearchInput> = (_props) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -17,4 +17,4 @@ const SearchBar: React.FC<ISearchBar> = (_props) => {
   );
 };
 
-export default SearchBar;
+export default SearchInput;

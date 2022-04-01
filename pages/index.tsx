@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import SearchBar from "../components/cards/SearchBar";
+
+import Search from "../components/widgets/Search";
 // import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <SearchBar />
+        <Search />
       </main>
 
       {/* <footer>Footer</footer> */}
