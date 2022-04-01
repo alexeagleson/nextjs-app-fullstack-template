@@ -1,16 +1,8 @@
 import Link from 'next/link';
+import { ISearchResultData } from '../../../lib/search/types';
 
-export interface ISearchResult extends React.ComponentPropsWithoutRef<'div'> {
-  url: string;
-  title: string;
-  text: string;
-}
-
-export const mockSearchResult: ISearchResult = {
-  url: 'https://www.google.com',
-  title: 'This is a link to a search result',
-  text: 'Description of the search result. The description might be a bit long and it will tell you everything you need to know about the search result.',
-};
+export type ISearchResult = ISearchResultData &
+  React.ComponentPropsWithoutRef<'div'> & {};
 
 const SearchResult: React.FC<ISearchResult> = ({
   url,
