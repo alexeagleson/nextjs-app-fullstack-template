@@ -1,11 +1,11 @@
 import { ISearchResultData } from '../../../lib/search/types';
 import SearchResult from '../search-result/SearchResult';
 
-export type ISearchResult = React.ComponentPropsWithoutRef<'div'> & {
+export type ISearchResultGroup = React.ComponentPropsWithoutRef<'div'> & {
   searchResults: ISearchResultData[];
 };
 
-const SearchResultGroup: React.FC<ISearchResult> = ({
+const SearchResultGroup: React.FC<ISearchResultGroup> = ({
   searchResults,
   className,
   ...divProps

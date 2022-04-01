@@ -1,7 +1,7 @@
 import Footer from '../navigation/footer/Footer';
 import Header from '../navigation/header/Header';
 
-interface IAppShell {}
+export interface IAppShell extends React.ComponentProps<React.FC> {}
 
 const AppShell: React.FC<IAppShell> = ({ children }) => {
   return (

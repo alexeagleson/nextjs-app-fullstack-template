@@ -7,6 +7,9 @@
     "yarn": ">=1.22.0",
     "npm": "please-use-yarn"
   },
+  "resolutions": {
+    "webpack": "^5"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,7 +20,9 @@
     "test": "jest",
     "playwright:install": "playwright install",
     "playwright:test": "playwright test",
-    "playwright:codegen": "playwright codegen http://localhost:3000"
+    "playwright:codegen": "playwright codegen http://localhost:3000",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "next": "12.1.4",
@@ -29,6 +34,15 @@
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@playwright/test": "^1.20.1",
+    "@storybook/addon-actions": "^6.4.20",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-interactions": "^6.4.20",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack5": "^6.4.20",
+    "@storybook/manager-webpack5": "^6.4.20",
+    "@storybook/react": "^6.4.20",
+    "@storybook/testing-library": "^0.0.9",
     "@testing-library/react": "^13.0.0",
     "@types/jest": "^27.4.1",
     "@types/node": "17.0.23",

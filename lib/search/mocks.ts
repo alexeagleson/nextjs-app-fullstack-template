@@ -24,9 +24,9 @@ const mockSearchResultD: ISearchResultData = {
   text: 'The topic of this link is both cats and dogs.  Description of the search result. The description might be a bit long and it will tell you everything you need to know about the search result.',
 };
 
-export const mockSearchResults: ISearchResultData[] = [
+export const mockSearchResults = [
   mockSearchResultA,
   mockSearchResultB,
   mockSearchResultC,
   mockSearchResultD,
-];
+] as const;
