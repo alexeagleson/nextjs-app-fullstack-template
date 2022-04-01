@@ -15,10 +15,10 @@ const Search: React.FC<ISearch> = (_props) => {
       <Image src="/google-logo.png" alt="Google Logo" width={272} height={92} />
       <SearchInput />
       <div className="space-x-3">
-        <button type="submit" className="border-1 p-2 px-6 bg-slate-100">
+        <button type="submit" className="border-1 p-2 px-6 bg-slate-100 rounded-md">
           Google Search
         </button>
-        <button type="submit" className="border-1 p-2 px-6 bg-slate-100">
+        <button type="submit" className="border-1 p-2 px-6 bg-slate-100 rounded-md">
           {`I'm feeling lucky`}
         </button>
       </div>
