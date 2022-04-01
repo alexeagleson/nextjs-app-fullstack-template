@@ -6,7 +6,10 @@
     "eslint:recommended"
   ],
   "globals": {
-    "React": "readonly"
+    "React": "readonly",
+    "jest": "readonly",
+    "it": "readonly",
+    "expect": "readonly"
   },
   "overrides": [
     {
