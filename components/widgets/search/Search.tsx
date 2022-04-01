@@ -1,9 +1,12 @@
 import SearchInput from '../../inputs/SearchInput';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface ISearch {}
 
 const Search: React.FC<ISearch> = (_props) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <form
       className="flex flex-col items-center gap-y-5"
@@ -13,7 +16,7 @@ const Search: React.FC<ISearch> = (_props) => {
       }}
     >
       <Image src="/google-logo.png" alt="Google Logo" width={272} height={92} />
-      <SearchInput />
+      <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="space-x-3">
         <button
           type="submit"

@@ -1,10 +1,9 @@
-import { useState } from 'react';
+export interface ISearchInput {
+  searchTerm: string;
+  setSearchTerm: (s: string) => void;
+}
 
-interface ISearchInput {}
-
-const SearchInput: React.FC<ISearchInput> = (_props) => {
-  const [searchTerm, setSearchTerm] = useState('');
-
+const SearchInput: React.FC<ISearchInput> = ({ searchTerm, setSearchTerm }) => {
   return (
     <>
       <input
