@@ -1,5 +1,5 @@
-import Footer from "../navigation/footer/Footer";
-import Header from "../navigation/header/Header";
+import Footer from '../navigation/footer/Footer';
+import Header from '../navigation/header/Header';
 
 interface IAppShell {}
 

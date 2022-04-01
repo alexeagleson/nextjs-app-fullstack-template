@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import AppShell from "../components/shells/AppShell";
-import Search from "../components/widgets/Search";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import AppShell from '../components/shells/AppShell';
+import Search from '../components/widgets/Search';
 
 const Home: NextPage = () => {
   return (

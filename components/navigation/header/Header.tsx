@@ -1,27 +1,31 @@
-interface IHeader extends React.ComponentPropsWithoutRef<"header"> {}
+import Link from 'next/link';
 
-const Header: React.FC<IHeader> = ({ children, className, ...headerProps }) => {
+interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
+
+const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
   return (
     <header
       {...headerProps}
       className={`w-full flex flex-row justify-between ${className}`}
     >
       <div className="space-x-5 m-5">
-        <a href="/" className="hover:underline">
-          Gmail
-        </a>
-        <a href="/" className="hover:underline">
-          Store
-        </a>
+        <Link href="/">
+          <a className="hover:underline">Gmail</a>
+        </Link>
+        <Link href="/">
+          <a className="hover:underline">Store</a>
+        </Link>
       </div>
       <div className="space-x-5 m-5">
-        <a href="/" className="hover:underline">
-          Gmail
-        </a>
-        <a href="/" className="hover:underline">
-          Images
-        </a>
-        <button className="border-1 p-2 px-6 bg-blue-500 rounded text-white">Sign In</button>
+        <Link href="/">
+          <a className="hover:underline">Gmail</a>
+        </Link>
+        <Link href="/">
+          <a className="hover:underline">Images</a>
+        </Link>
+        <button className="border-1 p-2 px-6 bg-blue-500 rounded text-white">
+          Sign In
+        </button>
       </div>
     </header>
   );

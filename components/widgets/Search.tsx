@@ -1,5 +1,5 @@
-import SearchInput from "../inputs/SearchInput";
-import Image from "next/image";
+import SearchInput from '../inputs/SearchInput';
+import Image from 'next/image';
 
 interface ISearch {}
 
@@ -9,21 +9,27 @@ const Search: React.FC<ISearch> = (_props) => {
       className="flex flex-col items-center gap-y-5"
       onSubmit={(e) => {
         e.preventDefault();
-        alert("submit the form");
+        alert('submit the form');
       }}
     >
       <Image src="/google-logo.png" alt="Google Logo" width={272} height={92} />
       <SearchInput />
       <div className="space-x-3">
-        <button type="submit" className="border-1 p-2 px-6 bg-slate-100 rounded-md">
+        <button
+          type="submit"
+          className="border-1 p-2 px-6 bg-slate-100 rounded-md"
+        >
           Google Search
         </button>
-        <button type="submit" className="border-1 p-2 px-6 bg-slate-100 rounded-md">
+        <button
+          type="submit"
+          className="border-1 p-2 px-6 bg-slate-100 rounded-md"
+        >
           {`I'm feeling lucky`}
         </button>
       </div>
       <p>
-        Google offered in:{" "}
+        Google offered in:{' '}
         <a href="/fr" className="underline text-blue-600">
           Français
         </a>

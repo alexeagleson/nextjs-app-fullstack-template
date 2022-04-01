@@ -1,6 +1,6 @@
-interface IFooter extends React.ComponentPropsWithoutRef<"footer"> {}
+interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {}
 
-const Footer: React.FC<IFooter> = ({ children, className, ...footerProps }) => {
+const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
   return (
     <footer
       {...footerProps}
