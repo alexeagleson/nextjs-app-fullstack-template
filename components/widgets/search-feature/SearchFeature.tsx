@@ -1,33 +1,21 @@
 import SearchInput from '../../inputs/SearchInput';
 import Image from 'next/image';
-import { useState } from 'react';
 import SearchResultGroup from '../search-result-group/SearchResultGroup';
-import { ISearchResultData } from '../../../lib/search/types';
+import { useSearch } from '../../../lib/search/useSearch';
 
 interface ISearchFeature {}
 
 const SearchFeature: React.FC<ISearchFeature> = (_props) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState<ISearchResultData[]>();
+  const { searchResults, searchTerm, setSearchTerm, submitSearch } =
+    useSearch();
 
   return (
     <div>
       <form
-        className="flex flex-col items-center gap-y-5 mb-20"
-        onSubmit={async (e) => {
+        className="flex flex-col items-center gap-y-5 mb-14"
+        onSubmit={(e) => {
           e.preventDefault();
-
-          fetch('/api/search', {
-            body: JSON.stringify({ searchTerm }),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            method: 'POST',
-          }).then(async (response) => {
-            const searchResults: ISearchResultData[] | undefined =
-              await response.json();
-            setSearchResults(searchResults);
-          });
+          submitSearch();
         }}
       >
         <Image
@@ -59,7 +47,7 @@ const SearchFeature: React.FC<ISearchFeature> = (_props) => {
         </p>
       </form>
       {searchResults && (
-        <SearchResultGroup searchResults={searchResults} className="mb-20" />
+        <SearchResultGroup searchResults={searchResults} className="mb-14" />
       )}
     </div>
   );
