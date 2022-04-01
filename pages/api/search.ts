@@ -16,11 +16,13 @@ export default function handler(
   } = req;
 
   if (searchTerm && searchTerm.length > 0) {
+    console.log('search success');
     const filteredResults = mockSearchResults.filter((result) => {
       return result.text.toLowerCase().includes(searchTerm.toLowerCase());
     });
     res.status(200).json(filteredResults);
   } else {
+    console.log('search failed');
     res.status(400).json([]);
   }
 }

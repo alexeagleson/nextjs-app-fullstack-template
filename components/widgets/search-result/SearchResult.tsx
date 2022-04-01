@@ -12,7 +12,7 @@ const SearchResult: React.FC<ISearchResult> = ({
   ...divProps
 }) => {
   return (
-    <div {...divProps} className={`${className} flex flex-col w-96`}>
+    <div data-testid="search-result" {...divProps} className={`${className} flex flex-col w-96`}>
       <p>{url}</p>
       <Link href={url}>
         <a

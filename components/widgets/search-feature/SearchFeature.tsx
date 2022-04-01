@@ -32,10 +32,7 @@ const SearchFeature: React.FC<ISearchFeature> = (_props) => {
           >
             Google Search
           </button>
-          <button
-            type="submit"
-            className="border-1 p-2 px-6 bg-slate-100 rounded-md"
-          >
+          <button className="border-1 p-2 px-6 bg-slate-100 rounded-md">
             {`I'm feeling lucky`}
           </button>
         </div>
