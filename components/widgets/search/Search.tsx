@@ -1,6 +1,7 @@
 import SearchInput from '../../inputs/SearchInput';
 import Image from 'next/image';
 import { useState } from 'react';
+import { ISearchResultData } from '../../../lib/search/types';
 
 interface ISearch {}
 
@@ -10,9 +11,19 @@ const Search: React.FC<ISearch> = (_props) => {
   return (
     <form
       className="flex flex-col items-center gap-y-5"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        alert('submit the form');
+
+        fetch('/api/search', {
+          body: JSON.stringify({ searchTerm }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          method: 'POST',
+        }).then(async (response) => {
+          const searchResults = await response.json();
+          console.log(searchResults);
+        });
       }}
     >
       <Image src="/google-logo.png" alt="Google Logo" width={272} height={92} />

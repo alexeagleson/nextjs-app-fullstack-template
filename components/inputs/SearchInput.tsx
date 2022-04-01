@@ -1,6 +1,6 @@
 export interface ISearchInput {
   searchTerm: string;
-  setSearchTerm: (s: string) => void;
+  setSearchTerm: (_s: string) => void;
 }
 
 const SearchInput: React.FC<ISearchInput> = ({ searchTerm, setSearchTerm }) => {
