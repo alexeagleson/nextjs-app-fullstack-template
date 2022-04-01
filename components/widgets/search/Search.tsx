@@ -1,4 +1,4 @@
-import SearchInput from '../inputs/SearchInput';
+import SearchInput from '../../inputs/SearchInput';
 import Image from 'next/image';
 
 interface ISearch {}
