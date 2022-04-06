@@ -1,17 +1,41 @@
-steps:
-  - uses: actions/checkout@v2
-  - uses: actions/setup-node@v2
-    with:
-      node-version: '14'
-  - name: Install dependencies
-    run: yarn install --immutable --immutable-cache --check-cache
-  - name: Install Playwright
-    run: npx playwright install --with-deps
-  - name: Run your tests
-    run: yarn playwright:test
-  - name: Upload test results
-    if: always()
-    uses: actions/upload-artifact@v2
-    with:
-      name: playwright-results
-      path: test-results
+name: PLaywright Test
+
+on:
+  push:
+    branches: 
+      - main
+  # pull_request:
+  #   types: [opened, synchronize, reopened, closed]
+  #   branches:
+  #     - main
+
+jobs:
+
+  # build_and_deploy_job:
+  # // TRUNCATED FOR CLARITY
+
+  test:
+    name: "Test site using Playwright"
+    timeout-minutes: 60
+    # needs: build_and_deploy_job
+    runs-on: ubuntu-20.04  
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache --check-cache
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Run the dev environment
+        run: yarn dev
+      - name: Run your tests
+        run: yarn playwright:test
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-results
+          path: test-results
